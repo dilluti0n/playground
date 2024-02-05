@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 {
     memset(&app, 0, sizeof(App));
     initSDL();
-    atexit(NULL);
+    atexit(SDL_Quit);
     for (;;) {
         prepareScene();
         doInput();

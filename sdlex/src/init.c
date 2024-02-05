@@ -1,5 +1,4 @@
 #include "../include/init.h"
-#include "../include/defs.h"
 #include "../include/common.h"
 
 void initSDL(void)
@@ -11,11 +10,10 @@ void initSDL(void)
         printf("Couldn't initialize SDL: %s\n", SDL_GetError());
         exit(1);
     }
-    app.window = SDL_CreateWindow("Player 01",
-            SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
-            SCREEN_WIDTH, SCREEN_HEIGHT, /* define.h */
-            windowFlags);
-    if (app.window == NULL) {
+    if ((app.window = SDL_CreateWindow("Player 01",
+                        SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
+                        SCREEN_WIDTH, SCREEN_HEIGHT, /* defs.h */
+                        windowFlags)) == NULL) {
         printf("Failed to open %d x %d window: %s\n",
                 SCREEN_WIDTH, SCREEN_HEIGHT, SDL_GetError());
         exit(1);

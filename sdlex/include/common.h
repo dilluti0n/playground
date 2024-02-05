@@ -4,6 +4,7 @@
 #include <SDL.h>
 #include <SDL_ttf.h>
 #include "../include/structs.h"
+#include "../include/defs.h"
 
 extern App app;
 
