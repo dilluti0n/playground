@@ -4,4 +4,13 @@
 #define SCREEN_WIDTH 1280
 #define SCREEN_HEIGHT 720
 
+#define RGB_SKYBLUE 135, 206, 235
+#define RGB_BLUE 0, 0, 255
+
+#define PLAYER_POS_LEAP 50
+#define PLAYER_POS_INIT_X 600
+#define PLAYER_POS_INIT_Y 300
+#define PLAYER_WIDTH 10
+#define PLAYER_HEIGHT 10
+
 #endif

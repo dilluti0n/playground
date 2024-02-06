@@ -14,7 +14,7 @@ else
   set shortmess=aoO
 endif
 badd +4 include/structs.h
-badd +5 src/init.c
+badd +28 src/init.c
 badd +6 include/init.h
 badd +14 makefile
 badd +1 include
@@ -22,10 +22,10 @@ badd +7 include/common.h
 badd +16 src/main.c
 badd +6 include/defs.h
 badd +1 src
-badd +1 src/input.c
-badd +1 include/input.h
+badd +6 src/input.c
+badd +3 include/input.h
 badd +12 src/draw.c
-badd +5 include/draw.h
+badd +4 include/draw.h
 badd +232 term://~/Desktop/projects/playground/sdlex//40994:/bin/zsh
 badd +2 .gitignore
 argglobal
@@ -196,8 +196,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 54 + 54) / 108)
-exe 'vert 2resize ' . ((&columns * 53 + 54) / 108)
+exe 'vert 1resize ' . ((&columns * 34 + 54) / 108)
+exe 'vert 2resize ' . ((&columns * 73 + 54) / 108)
 argglobal
 3argu
 if bufexists(fnamemodify("~/Desktop/projects/playground/sdlex/include/input.h", ":p")) | buffer ~/Desktop/projects/playground/sdlex/include/input.h | else | edit ~/Desktop/projects/playground/sdlex/include/input.h | endif
@@ -215,11 +215,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 12) / 24)
+let s:l = 2 - ((1 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
+keepjumps 2
 normal! 0
 lcd ~/Desktop/projects/playground/sdlex
 wincmd w
@@ -244,8 +244,8 @@ keepjumps 1
 normal! 0
 lcd ~/Desktop/projects/playground/sdlex
 wincmd w
-exe 'vert 1resize ' . ((&columns * 54 + 54) / 108)
-exe 'vert 2resize ' . ((&columns * 53 + 54) / 108)
+exe 'vert 1resize ' . ((&columns * 34 + 54) / 108)
+exe 'vert 2resize ' . ((&columns * 73 + 54) / 108)
 tabnext
 edit ~/Desktop/projects/playground/sdlex/src/main.c
 argglobal
@@ -293,6 +293,7 @@ exe 'vert 1resize ' . ((&columns * 36 + 54) / 108)
 exe 'vert 2resize ' . ((&columns * 35 + 54) / 108)
 exe 'vert 3resize ' . ((&columns * 35 + 54) / 108)
 argglobal
+1argu
 if bufexists(fnamemodify("~/Desktop/projects/playground/sdlex/include/common.h", ":p")) | buffer ~/Desktop/projects/playground/sdlex/include/common.h | else | edit ~/Desktop/projects/playground/sdlex/include/common.h | endif
 if &buftype ==# 'terminal'
   silent file ~/Desktop/projects/playground/sdlex/include/common.h
@@ -317,6 +318,7 @@ normal! 026|
 lcd ~/Desktop/projects/playground/sdlex
 wincmd w
 argglobal
+1argu
 if bufexists(fnamemodify("~/Desktop/projects/playground/sdlex/include/defs.h", ":p")) | buffer ~/Desktop/projects/playground/sdlex/include/defs.h | else | edit ~/Desktop/projects/playground/sdlex/include/defs.h | endif
 if &buftype ==# 'terminal'
   silent file ~/Desktop/projects/playground/sdlex/include/defs.h
@@ -341,6 +343,7 @@ normal! 02|
 lcd ~/Desktop/projects/playground/sdlex
 wincmd w
 argglobal
+1argu
 if bufexists(fnamemodify("~/Desktop/projects/playground/sdlex/include/structs.h", ":p")) | buffer ~/Desktop/projects/playground/sdlex/include/structs.h | else | edit ~/Desktop/projects/playground/sdlex/include/structs.h | endif
 if &buftype ==# 'terminal'
   silent file ~/Desktop/projects/playground/sdlex/include/structs.h
@@ -381,14 +384,14 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 232 - ((17 * winheight(0) + 12) / 24)
+let s:l = 24 - ((23 * winheight(0) + 12) / 24)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 232
-normal! 043|
+keepjumps 24
+normal! 0
 lcd ~/Desktop/projects/playground/sdlex
-tabnext 1
+tabnext 3
 set stal=1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

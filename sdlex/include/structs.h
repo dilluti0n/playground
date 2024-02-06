@@ -6,4 +6,8 @@ typedef struct {
     SDL_Window *window;
 } App;
 
+typedef struct {
+    int x, y;
+} Pos;
+
 #endif

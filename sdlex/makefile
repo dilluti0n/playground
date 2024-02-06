@@ -1,8 +1,9 @@
 SRCDIR=src
+DEVDIR=dev
 SRC=$(wildcard $(SRCDIR)/*.c)
 OBJ=$(SRC:.c=.o)
 CC=gcc
-CFLAGS=`pkg-config --cflags --libs SDL2_ttf`
+CFLAGS=-lsdl2
 
 mygame: $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $^

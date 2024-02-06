@@ -9,14 +9,18 @@
 #include "../include/defs.h"
 
 App app;
+Pos playerPos = {
+    .x = PLAYER_POS_INIT_X,
+    .y = PLAYER_POS_INIT_Y,
+};
 
 int main(int argc, char *argv[])
 {
-    memset(&app, 0, sizeof(App));
     initSDL();
     atexit(SDL_Quit);
     for (;;) {
         prepareScene();
+        drawPlayer();
         doInput();
         presentScene();
         SDL_Delay(16);
